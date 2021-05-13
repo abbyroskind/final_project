@@ -1,0 +1,91 @@
+@import url("https://use.typekit.net/goj2fvu.css");
+
+body {
+    box-sizing: border-box;
+    background-color: #FC4445;
+    color: #242526;
+    margin: 20px;
+}
+
+header {
+    /* display: flex; */
+    border: 1px solid cyan;
+    width: 100%;
+}
+
+nav {
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    overflow: hidden;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 200%;
+    margin: 0px 20px;
+}
+
+nav a:hover {
+    color: #97CAEF;
+    text-decoration: line-through;
+}
+
+#links {
+    border: 1px solid white;
+    flex-basis: 60%;
+}
+
+#frontpage {
+    border: 1px solid white;
+    height: 73vh;
+}
+
+#headlines {
+    border: 1px solid blue;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15vw;
+    height: 85vh;
+}
+
+h1 {
+    border: 1px solid green;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 8vw;
+    text-shadow: 4px 4px #97CAEF;
+}
+
+h2 {
+    border: 1px solid yellow;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3vw;
+    text-shadow: 2px 2px #97CAEF;
+   
+}
+
+#down-arrow {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+#down-arrow:hover {
+    cursor: pointer;
+    text-shadow: 5px 5px #97CAEF;
+}
