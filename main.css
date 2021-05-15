@@ -2,19 +2,19 @@
 
 body {
     box-sizing: border-box;
-    background-color: #FC4445;
-    color: #242526;
-    margin: 20px;
+    background-color: black;
+    padding: 0;
+    margin: 0;
 }
 
 header {
     /* display: flex; */
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
     width: 100%;
 }
 
 nav {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -24,28 +24,39 @@ nav {
     font-weight: 900;
     font-style: normal;
     overflow: hidden;
+    text-align: right;
 }
 
 nav a {
-    color: black;
+    color: #FF0028;
     text-decoration: none;
-    font-size: 200%;
+    font-size: 2vw;
     margin: 0px 20px;
 }
 
 nav a:hover {
-    color: #97CAEF;
+    color: #CAFEFE;
     text-decoration: line-through;
 }
 
 #links {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     flex-basis: 60%;
+}
+
+video {
+    object-fit: fill;
+    width: 100vw;
+    height: 95vh;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(30%);
+    top: 0%;
+    left: 0%;
 }
 
 #frontpage {
     border: 1px solid white;
-    height: 73vh;
 }
 
 #headlines {
@@ -59,33 +70,75 @@ nav a:hover {
 }
 
 h1 {
-    border: 1px solid green;
+    /* border: 1px solid green; */
+    color: #ff0028;
+    text-shadow: 5px 5px #CAFEFE;
     font-family: termina, sans-serif;
     font-weight: 900;
     font-style: normal;
     font-size: 8vw;
-    text-shadow: 4px 4px #97CAEF;
+    margin: 0;
 }
 
 h2 {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
+    color: #FF0028;
+    text-shadow: 2px 2px 2px #CAFEFE;
     font-family: termina, sans-serif;
     font-weight: 900;
     font-style: normal;
     font-size: 3vw;
-    text-shadow: 2px 2px #97CAEF;
-   
+    margin: 0;
 }
 
 #down-arrow {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    color: #FF0028;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
 }
 
 #down-arrow:hover {
     cursor: pointer;
-    text-shadow: 5px 5px #97CAEF;
+    text-shadow: 5px 5px 5px #CAFEFE;
+}
+
+.stats {
+    border: 1px solid white;
+    display: flex;
+    margin: 250px 70px;
+}
+
+#lives-stat, #money-stat, #opportunities-stat, #families-stat {
+    border: 1px solid red;
+    flex-basis: 60vw;
+    color: #FF0028;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 5vw;
+}
+
+#left span {
+   background: -webkit-linear-gradient(#ff0028, #CAFEFE, #beef00);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+#right {
+    border: 1px solid green;
+    /* margin-left: 20px; */
+}
+
+#crunch {
+    border: 1px solid red;
+    flex-basis: 35vw;
+    width: 90%;
+    margin: auto;
+    color: #FF0028;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 4vw;
 }
