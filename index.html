@@ -10,6 +10,26 @@
 </head>
 <body>
 
+    <!-- modal -->
+    <div id="modal">
+        <div id="modal-content">
+            <div id="modal-top">
+                <h3>Stay in the know.</h3>
+                <button id="close"><i class="fas fa-times"></i></button>
+            </div>
+                <p>Don't miss any actions by signing up for our newsletter:</p>
+                <form>
+                    <div id="modal-inputs">
+                        <input type="text" class="inputs" name="First Name" placeholder="First Name">
+                        <input type="text" class="inputs" name="Last Name" placeholder="Last Name">
+                        <input type="text" class="inputs" name="Email" placeholder="Email">
+                        <br>
+                        <input type="submit" id="submit">
+                    </div>
+                </form>
+        </div>  
+    </div>
+
     <header>
     <!-- nav -->
         <nav>
@@ -62,17 +82,17 @@
     <section id="tabs">
 
         <div id="tabs-title">
-            <h2 id="start">Where to start</h2>
+            <h2 id="start-convo">How to start the conversation</h2>
         </div>
     
     <!-- buttons -->
         <div class="about-center section-center">
             <article class="about">
                 <div class="btn-container">
-                    <button class="tab-btn active" data-id="history">History</button>
-                    <button class="tab-btn" data-id="context">Context</button>
-                    <button class="tab-btn" data-id="identity">Identity</button>
-                    <button class="tab-btn" data-id="goals">Goals</button>
+                    <button class="tab-btn active" id="btn-history">History</button>
+                    <button class="tab-btn" id="btn-context">Context</button>
+                    <button class="tab-btn" id="btn-identity">Identity</button>
+                    <button class="tab-btn" id="btn-goals">Goals</button>
                 </div>
 
     <!-- tabs text -->
@@ -85,19 +105,23 @@
           
                 <div class="content" id="context">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi harum ratione maiores repudiandae ea sapiente? Dolorum tempore voluptatem expedita deleniti consequatur ex nobis sapiente beatae asperiores. Error ratione commodi ad.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat placeat unde quia iste esse. Blanditiis eaque, id pariatur dolores quasi officiis corrupti asperiores nostrum dignissimos vitae exercitationem, perspiciatis expedita enim.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat placeat unde quia iste esse. Blanditiis eaque, id pariatur dolores quasi officiis corrupti asperiores nostrum dignissimos vitae exercitationem, perspiciatis expedita enim.</p>
+                </div>
+           
+                <div class="content" id="identity">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente ex libero obcaecati atque sequi cumque ea adipisci sed ratione voluptatum, ab itaque! Saepe asperiores suscipit itaque autem placeat quod illo.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat placeat unde quia iste esse. Blanditiis eaque, id pariatur dolores quasi officiis corrupti asperiores nostrum dignissimos vitae exercitationem, perspiciatis expedita enim.</p>
+                </div>
+
+                <div class="content" id="goals">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente ex libero obcaecati atque sequi cumque ea adipisci sed ratione voluptatum, ab itaque! Saepe asperiores suscipit itaque autem placeat quod illo.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente ex libero obcaecati atque sequi cumque ea adipisci sed ratione voluptatum, ab itaque! Saepe asperiores suscipit itaque autem placeat quod illo.</p>
                     <ul>
                         <li>list item</li>
                         <li>list item</li>
                         <li>list item</li>
                     </ul>
-                </div>
-           
-                <div class="content" id="identity">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente ex libero obcaecati atque sequi cumque ea adipisci sed ratione voluptatum, ab itaque! Saepe asperiores suscipit itaque autem placeat quod illo.</p>
-                </div>
-
-                <div class="content" id="goals">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente ex libero obcaecati atque sequi cumque ea adipisci sed ratione voluptatum, ab itaque! Saepe asperiores suscipit itaque autem placeat quod illo.</p>
                 </div>
 
                 </div>
@@ -111,6 +135,12 @@
     </section>
     <!-- End of tabs section -->
 
+    <!-- Twitter API -->
+    <div id="twitter-container">
+        <div id="twitter-feed">
+        <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/harikakalluri/lists/activism-10611?ref_src=twsrc%5Etfw">A Twitter List by harikakalluri</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
 
 
 
