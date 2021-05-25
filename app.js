@@ -3,13 +3,13 @@ const form = document.querySelector("form")
 const modalInputs = document.querySelector("#modal-inputs")
 let num = 0
 
-// window.addEventListener("scroll", (event) => {
-//   event.preventDefault()
-//   if (num == 0) {
-//     modal.style.display = "block" 
-//     num++
-//   }
-// })
+window.addEventListener("scroll", (event) => {
+  event.preventDefault()
+  if (num == 0) {
+    modal.style.display = "block" 
+    num++
+  }
+})
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -35,12 +35,12 @@ close.addEventListener('click', () =>{
   modal.style.display = "none"
 })
 
-window.addEventListener('click', (event) => {
-  // event.preventDefault()
-  if (event.target != modal) {
-    modal.style.display = "none"
-    }
-})
+// window.addEventListener('click', (event) => {
+//   event.preventDefault()
+//   if (event.target == modal) {
+//     modal.style.display = "none"
+//     }
+// })
 
 
 
@@ -116,22 +116,92 @@ stats.addEventListener("mouseenter", (e) => {
 
 })
 
-const rightAnimation = new Motus.Animation({ $el: document.getElementById("crunch") })
-Motus.addAnimation({
-  startPoint: document.getElementById("right"),
-  endPoint: document.getElementById("right")
-  keyframes: {}
-    0: {
-      rotateX: ['0'],
-      rotate: ['0deg'],
-    },
-     100: {
-       rotateX: ['400%']
-       rotate: ['360deg']
-     }
-    }
-})
-Motus.addAnimation(rightAnimation)
+// const rightAnimation = new Motus.Animation({ $el: document.getElementById("crunch") })
+// Motus.addAnimation({
+//   startPoint: document.getElementById("right"),
+//   endPoint: document.getElementById("right")
+//   keyframes: {}
+//     0: {
+//       rotateX: ['0'],
+//       rotate: ['0deg'],
+//     },
+//      100: {
+//        rotateX: ['400%']
+//        rotate: ['360deg']
+//      }
+//     }
+// })
+// Motus.addAnimation(rightAnimation)
+
+const nyt = "https://api.nytimes.com/svc/topstories/v2/us.json?api-key=IBlpph2mOrnORySRWm9KbvUKXEcUZDwh"
+const nytFeed = document.getElementById("nyt-feed")
+
+fetch(`${nyt}`)
+  .then(res => res.json())
+  .then(res => {
+    console.log(res)
+
+    let headerOneContainer = document.querySelector("#header-one")
+    let headerTwoContainer = document.querySelector("#header-two")
+    let headerThreeContainer = document.querySelector("#header-three")
+    let headerFourContainer = document.querySelector("#header-four")
+
+    let headerOne = res.results[3].section
+    headerOneContainer.innerText = headerOne.toUpperCase()
+    let headerTwo = res.results[17].section
+    headerTwoContainer.innerText = headerTwo.toUpperCase()
+    let headerThree = res.results[8].section
+    headerThreeContainer.innerText = headerThree.toUpperCase()
+    let headerFour = res.results[10].section
+    headerFourContainer.innerText = headerFour.toUpperCase()
+
+    let titleOneContainer = document.querySelector("#card-title-one")
+    let titleTwoContainer = document.querySelector("#card-title-two")
+    let titleThreeContainer = document.querySelector("#card-title-three")
+    let titleFourContainer = document.querySelector("#card-title-four")
+
+    let titleOne = res.results[3].title
+    titleOneContainer.innerText = titleOne
+    let titleTwo = res.results[17].title
+    titleTwoContainer.innerText = titleTwo
+    let titleThree = res.results[8].title
+    titleThreeContainer.innerText = titleThree
+    let titleFour = res.results[10].title
+    titleFourContainer.innerText = titleFour
+
+    let descriptionOneContainer = document.querySelector("#description-one")
+    let descriptionTwoContainer = document.querySelector("#description-two")
+    let descriptionThreeContainer = document.querySelector("#description-three")
+    let descriptionFourContainer = document.querySelector("#description-four")
+
+    let descriptionOne = res.results[3].abstract
+    descriptionOneContainer.innerText = descriptionOne
+    let descriptionTwo = res.results[17].abstract
+    descriptionTwoContainer.innerText = descriptionTwo
+    let descriptionThree = res.results[8].abstract
+    descriptionThreeContainer.innerText = descriptionThree 
+    let descriptionFour = res.results[10].abstract
+    descriptionFourContainer.innerText = descriptionFour
+
+    let hyperlinkOneContainer = document.querySelector("#hyperlink-one")
+    let hyperlinkTwoContainer = document.querySelector("#hyperlink-two")
+    let hyperlinkThreeContainer = document.querySelector("#hyperlink-three")
+    let hyperlinkFourContainer = document.querySelector("#hyperlink-four")
+
+    let hyperlinkOne = res.results[3].short_url
+    hyperlinkOneContainer.setAttribute("href", hyperlinkOne)
+
+    let hyperlinkTwo = res.results[17].short_url
+    hyperlinkTwoContainer.setAttribute("href", hyperlinkTwo) 
+    
+    let hyperlinkThree = res.results[8].short_url
+    hyperlinkThreeContainer.setAttribute("href", hyperlinkThree)
+
+    let hyperlinkFour = res.results[10].short_url
+    hyperlinkFourContainer.setAttribute("href", hyperlinkFour)
+
+
+  })
 
 
 
