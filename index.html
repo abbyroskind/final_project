@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <script src="https://kit.fontawesome.com/79c4a9c27c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <title>The Time is Now</title>
 </head>
 <body>
@@ -64,10 +66,25 @@
     <section class="stats">
 
         <div id="left">
-            <div id="lives-stat"><span>1,288,634</span><br> lives lost</div>
-            <div id="money-stat"><span>4,625,991,089</span><br> dollars wasted</div>
-            <div id="opportunities-stat"><span>5,239</span><br> opportunities lost</div>
-            <div id="families-stat"><span>5,000,000</span><br> families affected</div>
+            <div class="couples">
+                <div class="stats-text">lives lost</div>
+                <div class="numbers" akhi="40336" id="lives-stat"><span>0</span></div>
+            </div>
+
+            <div class="couples">
+                <div class="stats-text">dollars wasted</div>
+                <div class="numbers" akhi="990648" id="money-stat"><span>0</span></div>
+            </div>
+
+            <div class="couples">
+                <div class="stats-text">opportunities lost</div>
+                <div class="numbers" akhi="568340" id="opportunities-stat"><span>0</span></div>
+            </div> 
+
+            <div class="couples">
+                <div class="stats-text">families affected</div>
+                <div class="numbers" akhi="10479" id="families-stat"><span>0</span></div>
+            </div>
         </div>
 
         <div id="right">
@@ -136,18 +153,31 @@
     <!-- End of tabs section -->
 
     <!-- Twitter API -->
-    <div id="twitter-container">
+    <!-- <div id="twitter-container">
         <div id="twitter-feed">
         <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/harikakalluri/lists/activism-10611?ref_src=twsrc%5Etfw">A Twitter List by harikakalluri</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-    </div>
+    </div> -->
 
 
 
     <article></article>
 
-    <footer></footer>
+    <footer>
+        <div id="footer-links">
+            <ul>
+                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="jquery.easing.min.js"></script>
+    <script src="dist/motus.web.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

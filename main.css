@@ -174,25 +174,39 @@ h2 {
     margin: 200px 70px;
 }
 
-#lives-stat, #money-stat, #opportunities-stat, #families-stat {
-    border: 1px solid red;
+.numbers {
+    /* border: 1px solid red; */
     flex-basis: 60vw;
     color: #FF0028;
     font-family: termina, sans-serif;
     font-weight: 900;
     font-style: normal;
     font-size: 5vw;
-}
-
-#left span {
-   background: -webkit-linear-gradient(#ff0028, #beef00, #1400c6);
+    background: -webkit-linear-gradient(#ff0028, #beef00, #1400c6);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 
+.couples {
+    margin: 0 0 60px 0;
+}
+
+#left {
+    width: 100%;
+}
+
+.stats-text {
+    /* border: 1px solid mediumseagreen; */
+    color: #FF0028;
+    font-family: 'Maven Pro', sans-serif;
+    text-transform: uppercase;
+    font-size: 5vw;
+
+}
+
 #right {
     border: 1px solid green;
-    /* margin-left: 20px; */
+    /* animation: fall 4s infinite linear; */
 }
 
 #crunch {
@@ -205,6 +219,26 @@ h2 {
     font-weight: 900;
     font-style: normal;
     font-size: 4vw;
+    /* animation-name: crunch;
+    animation: crunch 4s infinite; 
+    animation-timing-function: ease-in-out; */
+}
+
+@keyframes crunch {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes fall {
+    from { 
+        transform: translateY(0%)
+    } to {
+        transform: translateY(400%)
+    }
 }
 
 /* ||| TABS ||| */
@@ -328,5 +362,62 @@ figcaption {
 #twitter-feed {
     flex-basis: 30%;
     column-count: 2;
+}
+
+/* ||| Footer ||| */
+
+footer {
+    /* border: 1px solid white; */
+    color: #beef00;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-links {
+    /* border: 1px solid turquoise; */
+}
+
+footer ul {
+    /* border: 1px solid red; */
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #beef00;
+}
+
+footer a:hover {
+    color: #FF0028;
+    text-decoration: line-through;
+}
+
+footer li {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 100px;
+}
+
+.fa-facebook-f, .fa-twitter, .fa-instagram {
+    color: #beef00;
+}
+
+.fa-facebook-f:hover {
+    color: #FF0028;
+}
+
+.fa-twitter:hover {
+    color: #FF0028;
+}
+
+.fa-instagram:hover {
+    color: #FF0028;
 }
 

@@ -3,13 +3,13 @@ const form = document.querySelector("form")
 const modalInputs = document.querySelector("#modal-inputs")
 let num = 0
 
-window.addEventListener("scroll", (event) => {
-  event.preventDefault()
-  if (num == 0) {
-    modal.style.display = "block" 
-    num++
-  }
-})
+// window.addEventListener("scroll", (event) => {
+//   event.preventDefault()
+//   if (num == 0) {
+//     modal.style.display = "block" 
+//     num++
+//   }
+// })
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -41,6 +41,100 @@ window.addEventListener('click', (event) => {
     modal.style.display = "none"
     }
 })
+
+
+
+// Counter
+
+
+// Counter Option 2 - jQuery (don't need span = 0, actual number in the HTML)
+
+// jQuery.easing.def = "easeInOutQuad"
+
+// $(".numbers").each(function () {
+//   var $this = $(this)
+//   jQuery({ counter: 0 }).animate({ counter: $this.text() }, {
+//       duration: 4000,
+//       easing: "easeInOutQuad", 
+//       step: function () {
+//           $this.text(Math.ceil(this.counter))
+//       }
+//   })
+// })
+
+// Counter Option 3 (need span = 0, "akhi" defines number)
+
+// const counters = document.querySelectorAll(".numbers")
+// let speed = 1000
+
+// counters.forEach(counter => {
+//   const animate = () => {
+//   const value = +counter.getAttribute("akhi")
+//   const data = +counter.innerText
+
+//     speed = speed / 6 * 5
+//     const time = value / speed
+//     if(data < value) {
+//       counter.innerText = Math.ceil(data + time)
+//       setTimeout(animate, speed)
+//     } else {
+//       counter.innerText = value
+//     }
+    
+//   }
+
+//   animate()
+// })
+
+// Stats section animations and event listeners
+
+const right = document.querySelector("#crunch")
+const stats = document.querySelector(".stats")
+
+stats.addEventListener("mouseenter", (e) => {
+  e.preventDefault()
+  const counters = document.querySelectorAll(".numbers")
+  let speed = 200
+
+  counters.forEach(counter => {
+    const animate = () => {
+    const value = +counter.getAttribute("akhi")
+    const data = +counter.innerText
+
+      const time = value / speed
+        if(data < value) {
+          counter.innerText = Math.ceil(data + time)
+        setTimeout(animate, 5)
+        } else {
+        counter.innerText = value
+        }
+    
+      }
+
+      animate()
+    })
+
+})
+
+const rightAnimation = new Motus.Animation({ $el: document.getElementById("crunch") })
+Motus.addAnimation({
+  startPoint: document.getElementById("right"),
+  endPoint: document.getElementById("right")
+  keyframes: {}
+    0: {
+      rotateX: ['0'],
+      rotate: ['0deg'],
+    },
+     100: {
+       rotateX: ['400%']
+       rotate: ['360deg']
+     }
+    }
+})
+Motus.addAnimation(rightAnimation)
+
+
+
             
 const about = document.querySelector(".about")
 // console.log(about)
@@ -112,3 +206,32 @@ goals.addEventListener("click", () => {
   history.classList.remove("active")
   historyContent.style.display = "none"
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Twitter
+
+// const url = "https://api.twitter.com/2/tweets/sample/stream"
+
+// const options = {
+//   headers: {
+//     Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAHKRPwEAAAAALdFgtuDB91GyR1oh4Vppn0R%2Fs%2Fc%3DAuwUrP2d9XECncQVaSkk7RUXDsGAU3XNkhrOKxfr8MV8u4HsW7"
+//   }
+// }
+
+// fetch(url, options)
+//   .then(res => res.json())
+//   .then(data => {
+//     console.log(data)
+
+//   })
