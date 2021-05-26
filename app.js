@@ -280,6 +280,8 @@ fetch(`${nyt}`)
 
   hamburger.addEventListener("click", () => {
 
+    hiddenMenu.classList.remove("animate__animated", "animate__fadeOutRight")
+    hiddenMenu.classList.add("animate__animated", "animate__fadeInRight")
     hiddenMenu.style.display = "block"
     hamburger.style.display = "none"
 
@@ -287,7 +289,9 @@ fetch(`${nyt}`)
 
   farRightClose.addEventListener("click", () => {
 
-    hiddenMenu.style.display = "none"
+    hiddenMenu.classList.remove("animate__animated", "animate__fadeInRight")
+    hiddenMenu.classList.add("animate__animated", "animate__fadeOutRight")
+
     hamburger.style.display = "block"
 
   })

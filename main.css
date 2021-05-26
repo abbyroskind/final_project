@@ -226,7 +226,7 @@ h2 {
 /* ||| STATS SECTION ||| */
 
 .stats {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: flex;
     margin: 200px 70px;
 }
@@ -262,12 +262,12 @@ h2 {
 }
 
 #right {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* animation: fall 4s infinite linear; */
 }
 
 #crunch {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     flex-basis: 35vw;
     width: 90%;
     margin: auto;
@@ -512,5 +512,7 @@ footer li {
     #hamburger {
         font-size: 4vh;
     }
+    .about-content {
+        height: 40vh;
+    }
 }
-
