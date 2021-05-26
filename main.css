@@ -11,7 +11,7 @@ body {
 /* ||| MODAL ||| */
 
 #modal {
-    /* border: 1px solid white; */
+    /* border: 10px solid white; */
     /* height: 40vh; */
     margin: auto;
     border-radius: 100px;
@@ -71,7 +71,7 @@ input {
     cursor: pointer;
 }
 
-#close {
+.close {
     border: none;
     font-size: 50px !important;
     left: 800px;
@@ -80,11 +80,11 @@ input {
 /* ||| FRONTPAGE/ VIDEO SECTION ||| */
 
 header {
+    /* border: 1px solid fuchsia; */
     width: 100%;
 }
 
 nav {
-    /* border: 1px solid black; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -109,9 +109,65 @@ nav a:hover {
     text-decoration: line-through;
 }
 
-#links {
-    /* border: 1px solid white; */
-    flex-basis: 60%;
+#hidden-menu {
+    border: 1px solid purple;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+}
+
+#hidden-links {
+    border: 1px solid cyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(36, 37, 38, .9) 
+}
+
+#hidden-links a {
+    /* border: 1px solid greenyellow; */
+    color: #FF0028;
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 10vh;
+    text-decoration: none;
+    margin: 0;
+}
+
+#hidden-links a:hover {
+    color: #beef00;
+    text-decoration: line-through;
+}
+
+#far-right-close {
+    /* border: 10px solid green; */
+    left: 85%;
+    top: 5%;
+    position: absolute;
+}
+
+#hidden-close {
+    /* border: 1px solid blue; */
+    font-size: 8vw !important;
+}
+
+#hidden-close:hover {
+    text-shadow: 5px 5px 5px #beef00;
+}
+
+#hamburger {
+    /* border: 1px solid fuchsia; */
+    display: none;
+    color: #FF0028;
+    font-size: 6vh;
+    margin-top: 5%;
+    margin-right: 5%;
+    cursor: pointer;
 }
 
 video {
@@ -295,6 +351,7 @@ figcaption {
     font-family: 'Maven Pro', sans-serif;
     text-transform: uppercase;
     width: 60vw;
+    height: 60vh;
     overflow: scroll;
 }
 
@@ -372,7 +429,7 @@ footer {
     font-size: 2vw;
     height: 20vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-top: 10%;
 }
@@ -417,5 +474,43 @@ footer li {
 
 .fa-instagram:hover {
     color: #FF0028;
+}
+
+@media screen and (max-width: 1000px){
+    #links {
+        display: none;
+    }
+    #hamburger {
+        display: initial;
+    }
+    #frontpage-vid video {
+        display: none;
+    }
+    footer li {
+        display: inline-block;
+        margin: 0 20px;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #nyt-feed {
+        flex-direction: column;
+
+    }
+    .nyt-cards {
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    #hidden-links a {
+        font-size: 8vw;
+    }
+    #hidden-close {
+        font-size: 5vh;
+    }
+    #hamburger {
+        font-size: 4vh;
+    }
 }
 

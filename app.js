@@ -1,45 +1,38 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyU4tQhV4rz_Y_Uje6pt91gZ-uaBuVbdeKQzUX8XQFUc_Es4q41y_Mb_XnK4V0yQT1u/exec'
-const form = document.querySelector("form")
-const modalInputs = document.querySelector("#modal-inputs")
+// const scriptURL = 'https://script.google.com/macros/s/AKfycbyU4tQhV4rz_Y_Uje6pt91gZ-uaBuVbdeKQzUX8XQFUc_Es4q41y_Mb_XnK4V0yQT1u/exec'
+// const form = document.querySelector("form")
+// const modalInputs = document.querySelector("#modal-inputs")
 let num = 0
 
-window.addEventListener("scroll", (event) => {
-  event.preventDefault()
-  if (num == 0) {
-    modal.style.display = "block" 
-    num++
-  }
-})
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .then(() => {
-          //This is where you write your code
-
-          const modal = document.querySelector("#modal")
-
-          modal.style.display = "block"
-          
-          form.reset()
-
-          //Do not alter below this line
-      })
-      .catch(error => console.error('Error!', error.message))
-})
-
-const close = document.querySelector("#close")
-
-close.addEventListener('click', () =>{
-  modal.style.display = "none"
-})
-
-// window.addEventListener('click', (event) => {
+// window.addEventListener("scroll", (event) => {
 //   event.preventDefault()
-//   if (event.target == modal) {
-//     modal.style.display = "none"
-//     }
+//   if (num == 0) {
+//     modal.style.display = "block" 
+//     num++
+//   }
+// })
+
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//       .then(response => console.log('Success!', response))
+//       .then(() => {
+//           //This is where you write your code
+
+//           const modal = document.querySelector("#modal")
+
+//           modal.style.display = "block"
+          
+//           form.reset()
+
+//           //Do not alter below this line
+//       })
+//       .catch(error => console.error('Error!', error.message))
+// })
+
+// const close = document.querySelector(".close")
+
+// close.addEventListener('click', () =>{
+//   modal.style.display = "none"
 // })
 
 
@@ -47,54 +40,37 @@ close.addEventListener('click', () =>{
 // Counter
 
 
-// Counter Option 2 - jQuery (don't need span = 0, actual number in the HTML)
+// Counter Option 1 - jQuery (don't need span = 0, actual number in the HTML)
 
-// jQuery.easing.def = "easeInOutQuad"
+// const stats = document.querySelector(".stats")
 
-// $(".numbers").each(function () {
-//   var $this = $(this)
-//   jQuery({ counter: 0 }).animate({ counter: $this.text() }, {
-//       duration: 4000,
-//       easing: "easeInOutQuad", 
-//       step: function () {
-//           $this.text(Math.ceil(this.counter))
-//       }
+// stats.addEventListener("mouseenter", (e) => {
+//   e.preventDefault(e)
+//   if (num ==0) {
+//   $(document).ready(function () {
+//   $(".numbers").each(function () {
+//     var $this = $(this)
+//     jQuery({ counter: 0 }).animate({ counter: $this.text() }, {
+//         duration: 10000,
+//         easing: "swing",
+//         step: function () {
+//             $this.text(Math.ceil(this.counter))
+//         }
+//     })
 //   })
+//   num++
+
 // })
+// }
 
-// Counter Option 3 (need span = 0, "akhi" defines number)
+// Counter Option 2 (need span = 0, "akhi" defines number)
 
-// const counters = document.querySelectorAll(".numbers")
-// let speed = 1000
-
-// counters.forEach(counter => {
-//   const animate = () => {
-//   const value = +counter.getAttribute("akhi")
-//   const data = +counter.innerText
-
-//     speed = speed / 6 * 5
-//     const time = value / speed
-//     if(data < value) {
-//       counter.innerText = Math.ceil(data + time)
-//       setTimeout(animate, speed)
-//     } else {
-//       counter.innerText = value
-//     }
-    
-//   }
-
-//   animate()
-// })
-
-// Stats section animations and event listeners
-
-const right = document.querySelector("#crunch")
 const stats = document.querySelector(".stats")
 
 stats.addEventListener("mouseenter", (e) => {
   e.preventDefault()
   const counters = document.querySelectorAll(".numbers")
-  let speed = 200
+  const speed = 1000
 
   counters.forEach(counter => {
     const animate = () => {
@@ -102,110 +78,48 @@ stats.addEventListener("mouseenter", (e) => {
     const data = +counter.innerText
 
       const time = value / speed
-        if(data < value) {
-          counter.innerText = Math.ceil(data + time)
+      if(data < value) {
+        counter.innerText = Math.ceil(data + time)
         setTimeout(animate, 5)
-        } else {
-        counter.innerText = value
-        }
-    
+      } else {
+      counter.innerText = value
       }
+    
+    }
 
-      animate()
-    })
-
+    animate()
+  })
 })
 
-// const rightAnimation = new Motus.Animation({ $el: document.getElementById("crunch") })
-// Motus.addAnimation({
-//   startPoint: document.getElementById("right"),
-//   endPoint: document.getElementById("right")
-//   keyframes: {}
-//     0: {
-//       rotateX: ['0'],
-//       rotate: ['0deg'],
-//     },
-//      100: {
-//        rotateX: ['400%']
-//        rotate: ['360deg']
-//      }
-//     }
-// })
-// Motus.addAnimation(rightAnimation)
+// Counter Option 3
 
-const nyt = "https://api.nytimes.com/svc/topstories/v2/us.json?api-key=IBlpph2mOrnORySRWm9KbvUKXEcUZDwh"
-const nytFeed = document.getElementById("nyt-feed")
+// const right = document.querySelector("#crunch")
+// const stats = document.querySelector(".stats")
 
-fetch(`${nyt}`)
-  .then(res => res.json())
-  .then(res => {
-    console.log(res)
+// stats.addEventListener("mouseenter", (e) => {
+//   e.preventDefault()
+//   const counters = document.querySelectorAll(".numbers")
+//   let speed = 200
 
-    let headerOneContainer = document.querySelector("#header-one")
-    let headerTwoContainer = document.querySelector("#header-two")
-    let headerThreeContainer = document.querySelector("#header-three")
-    let headerFourContainer = document.querySelector("#header-four")
+//   counters.forEach(counter => {
+//     const animate = () => {
+//     const value = +counter.getAttribute("akhi")
+//     const data = +counter.innerText
 
-    let headerOne = res.results[3].section
-    headerOneContainer.innerText = headerOne.toUpperCase()
-    let headerTwo = res.results[17].section
-    headerTwoContainer.innerText = headerTwo.toUpperCase()
-    let headerThree = res.results[8].section
-    headerThreeContainer.innerText = headerThree.toUpperCase()
-    let headerFour = res.results[10].section
-    headerFourContainer.innerText = headerFour.toUpperCase()
-
-    let titleOneContainer = document.querySelector("#card-title-one")
-    let titleTwoContainer = document.querySelector("#card-title-two")
-    let titleThreeContainer = document.querySelector("#card-title-three")
-    let titleFourContainer = document.querySelector("#card-title-four")
-
-    let titleOne = res.results[3].title
-    titleOneContainer.innerText = titleOne
-    let titleTwo = res.results[17].title
-    titleTwoContainer.innerText = titleTwo
-    let titleThree = res.results[8].title
-    titleThreeContainer.innerText = titleThree
-    let titleFour = res.results[10].title
-    titleFourContainer.innerText = titleFour
-
-    let descriptionOneContainer = document.querySelector("#description-one")
-    let descriptionTwoContainer = document.querySelector("#description-two")
-    let descriptionThreeContainer = document.querySelector("#description-three")
-    let descriptionFourContainer = document.querySelector("#description-four")
-
-    let descriptionOne = res.results[3].abstract
-    descriptionOneContainer.innerText = descriptionOne
-    let descriptionTwo = res.results[17].abstract
-    descriptionTwoContainer.innerText = descriptionTwo
-    let descriptionThree = res.results[8].abstract
-    descriptionThreeContainer.innerText = descriptionThree 
-    let descriptionFour = res.results[10].abstract
-    descriptionFourContainer.innerText = descriptionFour
-
-    let hyperlinkOneContainer = document.querySelector("#hyperlink-one")
-    let hyperlinkTwoContainer = document.querySelector("#hyperlink-two")
-    let hyperlinkThreeContainer = document.querySelector("#hyperlink-three")
-    let hyperlinkFourContainer = document.querySelector("#hyperlink-four")
-
-    let hyperlinkOne = res.results[3].short_url
-    hyperlinkOneContainer.setAttribute("href", hyperlinkOne)
-
-    let hyperlinkTwo = res.results[17].short_url
-    hyperlinkTwoContainer.setAttribute("href", hyperlinkTwo) 
+//       const time = value / speed
+//         if(data < value) {
+//           counter.innerText = Math.ceil(data + time)
+//         setTimeout(animate, 5)
+//         } else {
+//         counter.innerText = value
+//         }
     
-    let hyperlinkThree = res.results[8].short_url
-    hyperlinkThreeContainer.setAttribute("href", hyperlinkThree)
+//       }
 
-    let hyperlinkFour = res.results[10].short_url
-    hyperlinkFourContainer.setAttribute("href", hyperlinkFour)
+//       animate()
+//     })
+// })
 
-
-  })
-
-
-
-            
 const about = document.querySelector(".about")
 // console.log(about)
 const tabs = document.querySelectorAll(".tab-btn")
@@ -277,31 +191,103 @@ goals.addEventListener("click", () => {
   historyContent.style.display = "none"
 })
 
+const nyt = "https://api.nytimes.com/svc/topstories/v2/us.json?api-key=IBlpph2mOrnORySRWm9KbvUKXEcUZDwh"
+const nytFeed = document.getElementById("nyt-feed")
 
+fetch(`${nyt}`)
+  .then(res => res.json())
+  .then(res => {
+    console.log(res)
 
+    let headerOneContainer = document.querySelector("#header-one")
+    let headerTwoContainer = document.querySelector("#header-two")
+    let headerThreeContainer = document.querySelector("#header-three")
+    let headerFourContainer = document.querySelector("#header-four")
 
+    let headerOne = res.results[3].section
+    headerOneContainer.innerText = headerOne.toUpperCase()
+    let headerTwo = res.results[17].section
+    headerTwoContainer.innerText = headerTwo.toUpperCase()
+    let headerThree = res.results[8].section
+    headerThreeContainer.innerText = headerThree.toUpperCase()
+    let headerFour = res.results[10].section
+    headerFourContainer.innerText = headerFour.toUpperCase()
 
+    let titleOneContainer = document.querySelector("#card-title-one")
+    let titleTwoContainer = document.querySelector("#card-title-two")
+    let titleThreeContainer = document.querySelector("#card-title-three")
+    let titleFourContainer = document.querySelector("#card-title-four")
 
+    let titleOne = res.results[3].title
+    titleOneContainer.innerText = titleOne
+    let titleTwo = res.results[17].title
+    titleTwoContainer.innerText = titleTwo
+    let titleThree = res.results[8].title
+    titleThreeContainer.innerText = titleThree
+    let titleFour = res.results[10].title
+    titleFourContainer.innerText = titleFour
 
+    let descriptionOneContainer = document.querySelector("#description-one")
+    let descriptionTwoContainer = document.querySelector("#description-two")
+    let descriptionThreeContainer = document.querySelector("#description-three")
+    let descriptionFourContainer = document.querySelector("#description-four")
 
+    let descriptionOne = res.results[3].abstract
+    descriptionOneContainer.innerText = descriptionOne
+    let descriptionTwo = res.results[17].abstract
+    descriptionTwoContainer.innerText = descriptionTwo
+    let descriptionThree = res.results[8].abstract
+    descriptionThreeContainer.innerText = descriptionThree 
+    let descriptionFour = res.results[10].abstract
+    descriptionFourContainer.innerText = descriptionFour
 
+    let hyperlinkOneContainer = document.querySelector("#hyperlink-one")
+    let hyperlinkTwoContainer = document.querySelector("#hyperlink-two")
+    let hyperlinkThreeContainer = document.querySelector("#hyperlink-three")
+    let hyperlinkFourContainer = document.querySelector("#hyperlink-four")
 
+    let hyperlinkOne = res.results[3].short_url
+    hyperlinkOneContainer.setAttribute("href", hyperlinkOne)
+    hyperlinkOneContainer.setAttribute("target", "_blank")
 
+    let hyperlinkTwo = res.results[17].short_url
+    hyperlinkTwoContainer.setAttribute("href", hyperlinkTwo) 
+    hyperlinkTwoContainer.setAttribute("target", "_blank")
+    
+    let hyperlinkThree = res.results[8].short_url
+    hyperlinkThreeContainer.setAttribute("href", hyperlinkThree)
+    hyperlinkThreeContainer.setAttribute("target", "_blank")
 
+    let hyperlinkFour = res.results[10].short_url
+    hyperlinkFourContainer.setAttribute("href", hyperlinkFour)
+    hyperlinkFourContainer.setAttribute("target", "_blank")
+  })
 
-// Twitter
+  const hamburger = document.querySelector("#hamburger")
+  const hiddenMenu = document.querySelector("#hidden-menu")
+  const farRightClose = document.querySelector("#far-right-close")
+  const navLinks = document.querySelector("#links")
 
-// const url = "https://api.twitter.com/2/tweets/sample/stream"
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 1000) {
+      hamburger.style.display = "block"
+      navLinks.style.display = "none"
+    } else {
+      hamburger.style.display = "none"
+      navLinks.style.display = "block"
+    }
+  })
 
-// const options = {
-//   headers: {
-//     Authorization: "Bearer AAAAAAAAAAAAAAAAAAAAAHKRPwEAAAAALdFgtuDB91GyR1oh4Vppn0R%2Fs%2Fc%3DAuwUrP2d9XECncQVaSkk7RUXDsGAU3XNkhrOKxfr8MV8u4HsW7"
-//   }
-// }
+  hamburger.addEventListener("click", () => {
 
-// fetch(url, options)
-//   .then(res => res.json())
-//   .then(data => {
-//     console.log(data)
+    hiddenMenu.style.display = "block"
+    hamburger.style.display = "none"
 
-//   })
+  })
+
+  farRightClose.addEventListener("click", () => {
+
+    hiddenMenu.style.display = "none"
+    hamburger.style.display = "block"
+
+  })
