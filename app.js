@@ -1,18 +1,17 @@
-// const scriptURL = 'https://script.google.com/macros/s/AKfycbyU4tQhV4rz_Y_Uje6pt91gZ-uaBuVbdeKQzUX8XQFUc_Es4q41y_Mb_XnK4V0yQT1u/exec'
-// const form = document.querySelector("form")
-// const modalInputs = document.querySelector("#modal-inputs")
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyU4tQhV4rz_Y_Uje6pt91gZ-uaBuVbdeKQzUX8XQFUc_Es4q41y_Mb_XnK4V0yQT1u/exec'
+const form = document.querySelector("form")
+const modalInputs = document.querySelector("#modal-inputs")
 let num = 0
 
-// window.addEventListener("scroll", (event) => {
-//   event.preventDefault()
-//   if (num == 0) {
-//     modal.style.display = "block" 
-//     num++
-//   }
-// })
+window.addEventListener("scroll", () => {
+  if (num == 0) {
+    modal.style.display = "block" 
+    num++
+  }
+})
 
 // form.addEventListener('submit', (e) => {
-//   e.preventDefault()
+//   e.preventDefault(e)
 //   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 //       .then(response => console.log('Success!', response))
 //       .then(() => {
@@ -29,11 +28,11 @@ let num = 0
 //       .catch(error => console.error('Error!', error.message))
 // })
 
-// const close = document.querySelector(".close")
+const close = document.querySelector(".close")
 
-// close.addEventListener('click', () =>{
-//   modal.style.display = "none"
-// })
+close.addEventListener('click', () =>{
+  modal.style.display = "none"
+})
 
 
 
@@ -42,54 +41,50 @@ let num = 0
 
 // Counter Option 1 - jQuery (don't need span = 0, actual number in the HTML)
 
-// const stats = document.querySelector(".stats")
-
-// stats.addEventListener("mouseenter", (e) => {
-//   e.preventDefault(e)
-//   if (num ==0) {
-//   $(document).ready(function () {
-//   $(".numbers").each(function () {
-//     var $this = $(this)
-//     jQuery({ counter: 0 }).animate({ counter: $this.text() }, {
-//         duration: 10000,
-//         easing: "swing",
-//         step: function () {
-//             $this.text(Math.ceil(this.counter))
-//         }
-//     })
-//   })
-//   num++
-
-// })
-// }
-
-// Counter Option 2 (need span = 0, "akhi" defines number)
-
 const stats = document.querySelector(".stats")
 
 stats.addEventListener("mouseenter", (e) => {
-  e.preventDefault()
-  const counters = document.querySelectorAll(".numbers")
-  const speed = 1000
-
-  counters.forEach(counter => {
-    const animate = () => {
-    const value = +counter.getAttribute("akhi")
-    const data = +counter.innerText
-
-      const time = value / speed
-      if(data < value) {
-        counter.innerText = Math.ceil(data + time)
-        setTimeout(animate, 5)
-      } else {
-      counter.innerText = value
-      }
-    
-    }
-
-    animate()
+  e.preventDefault(e)
+  $(".numbers").each(function () {
+    var $this = $(this)
+    jQuery({ counter: 0 }).animate({ counter: $this.text() }, {
+        duration: 6000,
+        easing: "swing",
+        step: function () {
+            $this.text(Math.ceil(this.counter))
+        }
+    })
   })
-})
+}, {once:true})
+
+
+// Counter Option 2 (need span = 0, "akhi" defines number)
+
+// const stats = document.querySelector(".stats")
+
+// stats.addEventListener("mouseenter", (e) => {
+//   e.preventDefault()
+//   const counters = document.querySelectorAll(".numbers")
+//   const speed = 1000
+
+//   counters.forEach(counter => {
+//     const animate = () => {
+//     const value = +counter.getAttribute("akhi")
+//     const data = +counter.innerText
+
+//       const time = value / speed
+//       if(data < value) {
+//         counter.innerText = Math.ceil(data + time)
+//         setTimeout(animate, 5)
+//       } else {
+//       counter.innerText = value
+//       }
+    
+//     }
+
+//     animate()
+//   })
+// })
 
 // Counter Option 3
 
