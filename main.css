@@ -107,10 +107,10 @@ nav a {
 nav a:hover {
     color: #beef00;
     text-decoration: line-through;
-}
+} 
 
 #hidden-menu {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: none;
     height: 100vh;
     width: 100vw;
@@ -119,7 +119,7 @@ nav a:hover {
 }
 
 #hidden-links {
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
     display: flex;
     flex-direction: column;
     justify-content: center;
